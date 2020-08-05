@@ -17,13 +17,13 @@ readme: README.md
 # A list of the collection's content authors. Can be just the name or in the format 'Full Name <email> (url)
 # @nicks:irc/im.site#channel'
 authors:
-- your name <example@domain.com>
+- Marcel Noe <marcel@marcel-noe.de>
 
 
 ### OPTIONAL but strongly recommended
 
 # A short summary description of the collection
-description: your collection description
+description: Ansible collection to provision XCore Networks infrastructure 
 
 # Either a single license or a list of licenses for content inside of a collection. Ansible Galaxy currently only
 # accepts L(SPDX,https://spdx.org/licenses/) licenses. This key is mutually exclusive with 'license_file'
@@ -42,7 +42,7 @@ tags: []
 # collection label 'namespace.name'. The value is a version range
 # L(specifiers,https://python-semanticversion.readthedocs.io/en/latest/#requirement-specification). Multiple version
 # range specifiers can be set and are separated by ','
-dependencies: {}
+dependencies: {'jnv.unattended-upgrades', 'MichaelRigart.aliases'}
 
 # The URL of the originating SCM repository
 repository: http://example.com/repository
