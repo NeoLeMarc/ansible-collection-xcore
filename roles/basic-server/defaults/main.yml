@@ -1,6 +1,11 @@
 ---
 dependencies: 
-   - { role: jnv.unattended-upgrades, unattended_origins_patterns: ['origin=Debian,codename=${distro_codename},label=Debian-Security', 'o=Debian,codename=${distro_codename},label=Debian', 'o=Debian,codename=${distro_codename},a=proposed-updates'], unattended_mail: 'root@xcore.net'}
-   - { role: MichaelRigart.aliases, aliases_list: [{user: marcel, alias: marcel@marcel-noe.de}, {user: root, alias: marcel}, {user: postmaster, alias: root}]}
+   - role: jnv.unattended-upgrades
+     vars:
+       unattended_origins_patterns: ['origin=Debian,codename=${distro_codename},label=Debian-Security', 'o=Debian,codename=${distro_codename},label=Debian', 'o=Debian,codename=${distro_codename},a=proposed-updates'], 
+       unattended_mail: 'root@xcore.net'
+   - role: MichaelRigart.aliases
+     vars:
+       aliases_list: [{user: marcel, alias: marcel@marcel-noe.de}, {user: root, alias: marcel}, {user: postmaster, alias: root}]}
 
 # defaults file for basic-server
