@@ -1,2 +1,3 @@
 ---
 # defaults file for basic-server
+ssh_allow_users: "AllowUsers root@10.10.* marcel@10.10.*"

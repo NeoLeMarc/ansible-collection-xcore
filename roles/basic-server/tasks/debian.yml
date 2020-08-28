@@ -39,11 +39,12 @@
               state=present
   notify: Restart ssh 
 
-- name: Only allow root from internal networks
-  lineinfile: dest=/etc/ssh/sshd_config
-              regexp="^AllowUsers"
-              line="AllowUsers root@10.10.* marcel@10.10.*"
-              state=present
+- name: Only allow specific users from internal networks
+  lineinfile: 
+    dest: /etc/ssh/sshd_config
+    regexp: "^AllowUsers"
+    line: "{{ ssh_allow_users }}"
+    state: present
   notify: Restart ssh 
 
 
