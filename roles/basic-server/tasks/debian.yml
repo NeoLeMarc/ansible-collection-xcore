@@ -7,6 +7,7 @@
       - mailutils
       - logwatch
       - prometheus-node-exporter
+      - openssh-server
       update_cache: yes
 
 - name: upgrade all packages
