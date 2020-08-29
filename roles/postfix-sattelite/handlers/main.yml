@@ -1,0 +1,8 @@
+---
+# handlers file for postfix-sattelite
+- name: Reconfigure postfix
+  command: dpkg-reconfigure -f noninteractive postfix 
+  notify: Restart postfix
+
+- name: Restart postfix 
+  service: name=postfix state=restarted
