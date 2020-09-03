@@ -7,6 +7,7 @@
         - sudo
         - birthday
         - nmap
+        - git
     update_cache: yes 
 
 - name: change default shell of user to zsh
