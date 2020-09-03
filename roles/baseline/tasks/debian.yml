@@ -1,0 +1,6 @@
+- name: install packages
+  apt:
+    pkg:
+    - vim
+    - zsh
+    - rl
