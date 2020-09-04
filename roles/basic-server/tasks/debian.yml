@@ -1,4 +1,4 @@
-- name: install packages 
+- name: install basic-server packages 
   apt:
       pkg:
       - vim
@@ -9,6 +9,7 @@
       - prometheus-node-exporter
       - openssh-server
       - net-tools
+      state: present
       update_cache: yes
 
 - name: upgrade all packages
