@@ -8,6 +8,7 @@
       - logwatch
       - prometheus-node-exporter
       - openssh-server
+      - net-tools
       update_cache: yes
 
 - name: upgrade all packages
