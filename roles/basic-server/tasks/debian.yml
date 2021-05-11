@@ -37,3 +37,14 @@
     state: present
   notify: Restart ssh 
 
+- name: does logwatch send mail to correct mailbox?
+  shell: grep logwatch@xcore.net /etc/cron.daily/00logwatch
+  register: logwatch_correct_email
+  ignore_errors: yes
+
+- name: copy logwatch config
+  copy: 
+    dest: /etc/cron.daily/00logwatch
+    src: files/00logwatch
+  when: logwatch_correct_email.rc > 0 
+
