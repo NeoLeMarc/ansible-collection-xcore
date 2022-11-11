@@ -20,7 +20,7 @@
       state: present
 
 - name: clone config files
-  git: "repo=https://citadel.noetech.net/stash/scm/an/config-files.git version=master dest=/home/{{ unix_username }}/config-files"
+  git: "repo=https://github.com/NeoLeMarc/config-files version=master dest=/home/{{ unix_username }}/config-files"
   become: yes
   become_user: "{{ unix_username }}"
 
