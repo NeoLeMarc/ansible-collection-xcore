@@ -2,4 +2,4 @@
 # defaults file for unixuser
 unix_username: marcel
 unix_user_gecos: Marcel Noe
-unix_user_ssh_keyfile: "{{ lookup('file', '/home/marcel/config-files/authorized_keys') }}"
+unix_user_ssh_keyfile: "{{ lookup('file', '~/config-files/authorized_keys') }}"

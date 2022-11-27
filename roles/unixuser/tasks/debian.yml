@@ -8,15 +8,16 @@
         - birthday
         - nmap
         - git
+        - fish
     update_cache: yes 
 
-- name: change default shell of user to zsh
+- name: change default shell of user to fish 
   user:
       name: "{{ unix_username }}"
       comment: "{{ unix_user_gecos }}"
       groups: sudo
       append: yes
-      shell: /usr/bin/zsh
+      shell: /usr/bin/fish
       state: present
 
 - name: clone config files
@@ -28,6 +29,23 @@
   git: "repo=https://github.com/ohmyzsh/ohmyzsh.git version=master dest=/home/{{ unix_username }}/.oh-my-zsh"
   become: yes
   become_user: "{{ unix_username }}"
+
+- name: create fish config dir
+  file:
+      path: "/home/{{ unix_username }}/.config/fish"
+      state: directory
+      recurse: yes
+      owner: marcel
+      group: marcel
+      mode: '0750'
+
+- name: link fish config for user 
+  file:
+      src: "/home/{{ unix_username }}/config-files/config.fish"
+      dest: "/home/{{ unix_username }}/.config/fish/config.fish"
+      owner: "{{ unix_username }}"
+      group: "{{ unix_username }}"
+      state: link
 
 - name: link zshrc for user 
   file:
