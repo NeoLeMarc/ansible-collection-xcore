@@ -9,6 +9,7 @@
       - prometheus-node-exporter
       - openssh-server
       - net-tools
+      - rsync
       state: present
       update_cache: yes
 
